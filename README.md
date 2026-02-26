@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="AhmadAlghoul-Photo.jpg" alt="Ahmad Al Ghoul" width="140" style="border-radius:50%">
-
 # Ahmad Al Ghoul
 
 **Senior Software Engineer · Software Engineer Team Lead**
