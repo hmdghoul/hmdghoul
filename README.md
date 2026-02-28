@@ -8,7 +8,7 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-ahmadalghoul-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/ahmadalghoul)
 [![Website](https://img.shields.io/badge/Website-ahmadalghoul.com-111827?style=flat&logo=google-chrome&logoColor=white)](https://ahmadalghoul.com)
 [![Location](https://img.shields.io/badge/Location-Muscat%2C%20Oman-2E8B57?style=flat&logo=google-maps&logoColor=white)](#)
-[![CV](https://img.shields.io/badge/Download-CV%20PDF-E8B84B?style=flat&logo=adobe-acrobat-reader&logoColor=white)](AhmadAlghoul-CV.pdf)
+[![CV](https://img.shields.io/badge/Download-CV%20PDF-E8B84B?style=flat&logo=adobe-acrobat-reader&logoColor=white)](https://ahmadalghoul.com/AhmadAlghoul-CV.pdf)
 
 </div>
 
@@ -183,7 +183,7 @@ Al-Zaytoonah Private University · Amman, Jordan · **2012**
 
 <div align="center">
 
-[![Download CV](https://img.shields.io/badge/⬇️%20Download%20Full%20CV-PDF-E8B84B?style=for-the-badge)](AhmadAlghoul-CV.pdf)
+[![Download CV](https://img.shields.io/badge/⬇️%20Download%20Full%20CV-PDF-E8B84B?style=for-the-badge)](https://ahmadalghoul.com/AhmadAlghoul-CV.pdf)
 
 *© 2025 Ahmad Al Ghoul · Muscat, Oman*
 
