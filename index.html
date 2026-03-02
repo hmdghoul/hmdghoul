@@ -7,7 +7,52 @@
   <meta name="author" content="Ahmad Al Ghoul">
   <meta property="og:title" content="Ahmad Al Ghoul — Senior Software Engineer">
   <meta property="og:description" content="13+ years building enterprise and mission-critical systems. Border management, ERP, cloud infrastructure.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ahmadalghoul.com">
+  <meta property="og:image" content="https://ahmadalghoul.com/AhmadAlghoul-Photo.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ahmad Al Ghoul — Senior Software Engineer">
+  <meta name="twitter:description" content="13+ years building enterprise and mission-critical systems. Border management, ERP, cloud infrastructure.">
+  <meta name="twitter:image" content="https://ahmadalghoul.com/AhmadAlghoul-Photo.jpg">
+  <meta name="robots" content="index, follow">
+  <meta property="og:locale" content="en_US">
+  <link rel="canonical" href="https://ahmadalghoul.com">
   <title>Ahmad Al Ghoul — Senior Software Engineer</title>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Ahmad Al Ghoul",
+      "url": "https://ahmadalghoul.com",
+      "image": "https://ahmadalghoul.com/AhmadAlghoul-Photo.jpg",
+      "jobTitle": "Software Engineer Team Lead",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "SITA"
+      },
+      "description": "Senior Software Engineer with 13+ years of experience specializing in enterprise and mission-critical systems across government and telecommunications sectors.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Muscat",
+        "addressCountry": "OM"
+      },
+      "email": "dev@ahmadalghoul.com",
+      "telephone": "+96898863154",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Al-Zaytoonah Private University"
+      },
+      "knowsAbout": ["C#", "Java", "Python", "ASP.NET MVC", ".NET Core", "Azure", "Docker", "Oracle", "SQL Server", "Border Management Systems", "Enterprise Software", "Cloud Infrastructure"],
+      "sameAs": [
+        "https://linkedin.com/in/ahmadalghoul",
+        "https://github.com/hmdghoul"
+      ]
+    }
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,7 +73,7 @@
       --accent-glow-2: rgba(0,212,170,.12);
       --text:          #EAEAEA;
       --text-2:        #9CA3AF;
-      --text-3:        #555B6E;
+      --text-3:        #8A8FA0;
       --border:        rgba(255,255,255,.06);
       --border-hover:  rgba(255,255,255,.12);
       --glass:         rgba(255,255,255,.02);
@@ -374,7 +419,7 @@
       padding: 0 32px;
     }
     .exp-card.open .exp-body {
-      max-height: 400px;
+      max-height: 600px;
       padding: 0 32px 28px;
     }
     .exp-body ul { display: flex; flex-direction: column; gap: 6px; }
@@ -460,7 +505,8 @@
       display: flex; justify-content: space-between; align-items: center;
     }
     .proj-tag { font-family: var(--fm); font-size: 10px; color: var(--text-3); letter-spacing: .08em; text-transform: uppercase; }
-    .proj-url { font-family: var(--fm); font-size: 11px; color: var(--text-3); }
+    .proj-url { font-family: var(--fm); font-size: 11px; color: var(--text-3); transition: color .2s; }
+    .proj-url:hover { color: var(--accent); }
 
     /* ─── EDUCATION ───────────────────────────────────────────────────────────── */
     .edu-bento { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -536,9 +582,65 @@
       .bento-intro { padding: 28px 24px; }
       .about-stats { grid-template-columns: 1fr; }
     }
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       REDUCED MOTION
+       ═══════════════════════════════════════════════════════════════════════════ */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto; }
+      .rv { opacity: 1; transform: none; }
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       SKIP LINK
+       ═══════════════════════════════════════════════════════════════════════════ */
+    .skip-link {
+      position: absolute; top: -100%; left: 16px; z-index: 999;
+      background: var(--accent); color: #fff; padding: 12px 24px;
+      border-radius: 0 0 8px 8px; font-size: 14px; font-weight: 600;
+      transition: top .2s;
+    }
+    .skip-link:focus { top: 0; }
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       FOCUS STYLES
+       ═══════════════════════════════════════════════════════════════════════════ */
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       ACTIVE NAV
+       ═══════════════════════════════════════════════════════════════════════════ */
+    .nav-menu a.active { color: var(--text); background: rgba(255,255,255,.06); }
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       BACK TO TOP
+       ═══════════════════════════════════════════════════════════════════════════ */
+    .back-top {
+      position: fixed; bottom: 32px; right: 32px; z-index: 100;
+      width: 44px; height: 44px; border-radius: 12px;
+      background: var(--bg-glass); border: 1px solid var(--border);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity .3s var(--ease), transform .3s var(--ease), border-color .3s;
+      cursor: pointer;
+    }
+    .back-top.show { opacity: 1; pointer-events: auto; }
+    .back-top:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+    .back-top svg { width: 18px; height: 18px; color: var(--text-2); }
   </style>
 </head>
 <body>
+
+<a href="#hero" class="skip-link">Skip to content</a>
 
 <!-- ═══ AMBIENT BG ═══ -->
 <div class="ambient">
@@ -550,7 +652,7 @@
 <!-- ═══ NAV ═══ -->
 <nav id="nav">
   <div class="nav-bar">
-    <div class="nav-brand"><span class="dot"></span> ahmad.alghoul</div>
+    <a href="/" class="nav-brand"><span class="dot"></span> ahmad.alghoul</a>
     <div class="nav-menu">
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
@@ -571,6 +673,7 @@
   <a href="AhmadAlghoul-CV.pdf" download onclick="closeMob()">Download CV</a>
 </div>
 
+<main>
 <!-- ═══ HERO ═══ -->
 <section id="hero">
   <div class="container">
@@ -580,7 +683,7 @@
       <div class="bento-intro glass rv">
         <div class="label"><span class="pulse"></span> Available for opportunities</div>
         <h1>Ahmad<br><span class="gr">Al Ghoul</span></h1>
-        <div class="typed-wrap"><span id="typed"></span><span class="blink"></span></div>
+        <div class="typed-wrap"><span id="typed"></span><span class="blink"></span><noscript>Software Engineer Team Lead | Enterprise Systems Architect | Cloud &amp; Backend Specialist</noscript></div>
         <p class="desc">Designing and delivering enterprise and mission-critical systems across government and telecommunications sectors. 13+ years of scalable architecture, cloud infrastructure, and backend engineering.</p>
         <div class="hero-btns">
           <a href="AhmadAlghoul-CV.pdf" download class="btn-accent">Download CV</a>
@@ -591,7 +694,7 @@
       <!-- Photo -->
       <div class="bento-photo glass rv">
         <div class="photo-inner">
-          <img src="AhmadAlghoul-Photo.jpg" alt="Ahmad Al Ghoul">
+          <img src="AhmadAlghoul-Photo.jpg" alt="Ahmad Al Ghoul, Senior Software Engineer" width="380" height="420" loading="lazy">
           <div class="photo-overlay">
             <div class="yrs">13+<small>Years of Experience</small></div>
             <div class="location">
@@ -617,8 +720,12 @@
           LinkedIn
         </a>
         <a href="https://ahmadalghoul.com" target="_blank" rel="noopener" class="c-chip">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           ahmadalghoul.com
+        </a>
+        <a href="https://github.com/hmdghoul" target="_blank" rel="noopener" class="c-chip">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub
         </a>
       </div>
 
@@ -661,7 +768,7 @@
     <div class="exp-list">
 
       <div class="exp-card glass rv open">
-        <div class="exp-top" onclick="toggleExp(this)">
+        <div class="exp-top" role="button" tabindex="0" aria-expanded="true" onclick="toggleExp(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleExp(this)}">
           <div class="exp-marker">01</div>
           <div class="exp-info">
             <div class="company">SITA</div>
@@ -684,7 +791,7 @@
       </div>
 
       <div class="exp-card glass rv">
-        <div class="exp-top" onclick="toggleExp(this)">
+        <div class="exp-top" role="button" tabindex="0" aria-expanded="false" onclick="toggleExp(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleExp(this)}">
           <div class="exp-marker">02</div>
           <div class="exp-info">
             <div class="company">MAPLE TELECOMMUNICATIONS</div>
@@ -707,7 +814,7 @@
       </div>
 
       <div class="exp-card glass rv">
-        <div class="exp-top" onclick="toggleExp(this)">
+        <div class="exp-top" role="button" tabindex="0" aria-expanded="false" onclick="toggleExp(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleExp(this)}">
           <div class="exp-marker">03</div>
           <div class="exp-info">
             <div class="company">IOM — United Nations</div>
@@ -730,7 +837,7 @@
       </div>
 
       <div class="exp-card glass rv">
-        <div class="exp-top" onclick="toggleExp(this)">
+        <div class="exp-top" role="button" tabindex="0" aria-expanded="false" onclick="toggleExp(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleExp(this)}">
           <div class="exp-marker">04</div>
           <div class="exp-info">
             <div class="company">BLACKSTONEEIT</div>
@@ -753,7 +860,7 @@
       </div>
 
       <div class="exp-card glass rv">
-        <div class="exp-top" onclick="toggleExp(this)">
+        <div class="exp-top" role="button" tabindex="0" aria-expanded="false" onclick="toggleExp(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleExp(this)}">
           <div class="exp-marker">05</div>
           <div class="exp-info">
             <div class="company">KAIZEN PLUS</div>
@@ -775,7 +882,7 @@
       </div>
 
       <div class="exp-card glass rv">
-        <div class="exp-top" onclick="toggleExp(this)">
+        <div class="exp-top" role="button" tabindex="0" aria-expanded="false" onclick="toggleExp(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleExp(this)}">
           <div class="exp-marker">06</div>
           <div class="exp-info">
             <div class="company">CATEC</div>
@@ -797,7 +904,7 @@
       </div>
 
       <div class="exp-card glass rv">
-        <div class="exp-top" onclick="toggleExp(this)">
+        <div class="exp-top" role="button" tabindex="0" aria-expanded="false" onclick="toggleExp(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleExp(this)}">
           <div class="exp-marker">07</div>
           <div class="exp-info">
             <div class="company">AXIS180</div>
@@ -893,56 +1000,56 @@
         <div class="proj-accent"></div>
         <div class="proj-head"><div class="proj-icon">🛂</div><span class="proj-yr">2021 – Present</span></div>
         <div><div class="proj-name">Border Management System — Oman</div><div class="proj-co">SITA</div></div>
-        <div class="proj-foot"><span class="proj-tag">Government · Security</span><span class="proj-url">evisa.rop.gov.om</span></div>
+        <div class="proj-foot"><span class="proj-tag">Government · Security</span><a href="https://evisa.rop.gov.om" target="_blank" rel="noopener nofollow" class="proj-url">evisa.rop.gov.om ↗</a></div>
       </div>
 
       <div class="proj glass rv">
         <div class="proj-accent"></div>
         <div class="proj-head"><div class="proj-icon">🏢</div><span class="proj-yr">2019 – 2021</span></div>
         <div><div class="proj-name">ERP System — Al Behar Group</div><div class="proj-co">Maple Telecommunications</div></div>
-        <div class="proj-foot"><span class="proj-tag">Enterprise · ERP</span><span class="proj-url">al-behar.com</span></div>
+        <div class="proj-foot"><span class="proj-tag">Enterprise · ERP</span><a href="https://al-behar.com" target="_blank" rel="noopener nofollow" class="proj-url">al-behar.com ↗</a></div>
       </div>
 
       <div class="proj glass rv">
         <div class="proj-accent"></div>
         <div class="proj-head"><div class="proj-icon">🌍</div><span class="proj-yr">2018 – 2019</span></div>
         <div><div class="proj-name">Border Management System — Niger</div><div class="proj-co">IOM — United Nations</div></div>
-        <div class="proj-foot"><span class="proj-tag">Government · UN</span><span class="proj-url">iom.int</span></div>
+        <div class="proj-foot"><span class="proj-tag">Government · UN</span><a href="https://iom.int" target="_blank" rel="noopener nofollow" class="proj-url">iom.int ↗</a></div>
       </div>
 
       <div class="proj glass rv">
         <div class="proj-accent"></div>
         <div class="proj-head"><div class="proj-icon">📊</div><span class="proj-yr">2017 – 2018</span></div>
         <div><div class="proj-name">Surface Hub Dashboards — ADNOC</div><div class="proj-co">BLACKSTONEEIT</div></div>
-        <div class="proj-foot"><span class="proj-tag">Energy · Visualisation</span><span class="proj-url">adnoc.ae</span></div>
+        <div class="proj-foot"><span class="proj-tag">Energy · Visualisation</span><a href="https://adnoc.ae" target="_blank" rel="noopener nofollow" class="proj-url">adnoc.ae ↗</a></div>
       </div>
 
       <div class="proj glass rv">
         <div class="proj-accent"></div>
         <div class="proj-head"><div class="proj-icon">⚙️</div><span class="proj-yr">2016 – 2017</span></div>
         <div><div class="proj-name">Operator Round System — GASCO</div><div class="proj-co">KAIZEN PLUS</div></div>
-        <div class="proj-foot"><span class="proj-tag">Energy · Operations</span><span class="proj-url">gasco-gas.com</span></div>
+        <div class="proj-foot"><span class="proj-tag">Energy · Operations</span><a href="https://gasco-gas.com" target="_blank" rel="noopener nofollow" class="proj-url">gasco-gas.com ↗</a></div>
       </div>
 
       <div class="proj glass rv">
         <div class="proj-accent"></div>
         <div class="proj-head"><div class="proj-icon">📋</div><span class="proj-yr">2015 – 2016</span></div>
         <div><div class="proj-name">Qarar E-Agenda</div><div class="proj-co">CATEC</div></div>
-        <div class="proj-foot"><span class="proj-tag">Government · Meetings</span><span class="proj-url">catec.ae</span></div>
+        <div class="proj-foot"><span class="proj-tag">Government · Meetings</span><a href="https://catec.ae" target="_blank" rel="noopener nofollow" class="proj-url">catec.ae ↗</a></div>
       </div>
 
       <div class="proj glass rv">
         <div class="proj-accent"></div>
         <div class="proj-head"><div class="proj-icon">📨</div><span class="proj-yr">2015 – 2016</span></div>
         <div><div class="proj-name">Barq E-Correspondence System</div><div class="proj-co">CATEC</div></div>
-        <div class="proj-foot"><span class="proj-tag">Government · Documents</span><span class="proj-url">catec.ae</span></div>
+        <div class="proj-foot"><span class="proj-tag">Government · Documents</span><a href="https://catec.ae" target="_blank" rel="noopener nofollow" class="proj-url">catec.ae ↗</a></div>
       </div>
 
       <div class="proj glass rv">
         <div class="proj-accent"></div>
         <div class="proj-head"><div class="proj-icon">💼</div><span class="proj-yr">2013 – 2015</span></div>
         <div><div class="proj-name">Titanium ERP</div><div class="proj-co">AXIS180</div></div>
-        <div class="proj-foot"><span class="proj-tag">Enterprise · ERP</span><span class="proj-url">axis180.com</span></div>
+        <div class="proj-foot"><span class="proj-tag">Enterprise · ERP</span><a href="https://axis180.com" target="_blank" rel="noopener nofollow" class="proj-url">axis180.com ↗</a></div>
       </div>
 
     </div>
@@ -978,6 +1085,8 @@
   </div>
 </section>
 
+</main>
+
 <!-- ═══ FOOTER ═══ -->
 <footer>
   <div class="container">
@@ -986,19 +1095,30 @@
       <div class="foot-links">
         <a href="mailto:dev@ahmadalghoul.com">Email</a>
         <a href="https://linkedin.com/in/ahmadalghoul" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/hmdghoul" target="_blank" rel="noopener">GitHub</a>
         <a href="https://ahmadalghoul.com" target="_blank" rel="noopener">Website</a>
         <a href="AhmadAlghoul-CV.pdf" download>Download CV</a>
       </div>
-      <div class="foot-copy">&copy; 2025 Ahmad Al Ghoul</div>
+      <div class="foot-copy">&copy; 2026 Ahmad Al Ghoul</div>
     </div>
   </div>
 </footer>
+
+<!-- ═══ BACK TO TOP ═══ -->
+<button class="back-top" id="backTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>
+</button>
 
 <!-- ═══ SCRIPTS ═══ -->
 <script>
   /* ── Nav ── */
   const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => nav.classList.toggle('stuck', scrollY > 20), { passive: true });
+  const backTop = document.getElementById('backTop');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('stuck', scrollY > 20);
+    backTop.classList.toggle('show', scrollY > 600);
+  }, { passive: true });
+  backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
   /* ── Mobile ── */
   const burger = document.getElementById('burger');
@@ -1017,17 +1137,40 @@
     setTimeout(type, del ? 32 : 72);
   }();
 
+  /* ── Active Nav ── */
+  const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
+  const sections = document.querySelectorAll('section[id]');
+  const navIO = new IntersectionObserver(es => {
+    es.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove('active'));
+        const link = document.querySelector(`.nav-menu a[href="#${e.target.id}"]`);
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { threshold: .1, rootMargin: '-20% 0px -60% 0px' });
+  sections.forEach(s => navIO.observe(s));
+
   /* ── Reveal ── */
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }),
     { threshold: .08, rootMargin: '0px 0px -24px 0px' });
-  document.querySelectorAll('.rv').forEach((el, i) => { el.style.transitionDelay = `${Math.min(i * .04, .3)}s`; io.observe(el); });
+  document.querySelectorAll('section, #hero').forEach(sec => {
+    const items = sec.querySelectorAll('.rv');
+    items.forEach((el, i) => { el.style.transitionDelay = `${Math.min(i * .06, .3)}s`; io.observe(el); });
+  });
 
   /* ── Accordion ── */
   function toggleExp(top) {
     const card = top.closest('.exp-card');
     const wasOpen = card.classList.contains('open');
-    document.querySelectorAll('.exp-card.open').forEach(c => c.classList.remove('open'));
-    if (!wasOpen) card.classList.add('open');
+    document.querySelectorAll('.exp-card.open').forEach(c => {
+      c.classList.remove('open');
+      c.querySelector('.exp-top').setAttribute('aria-expanded', 'false');
+    });
+    if (!wasOpen) {
+      card.classList.add('open');
+      top.setAttribute('aria-expanded', 'true');
+    }
   }
 </script>
 </body>
