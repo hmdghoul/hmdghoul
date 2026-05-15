@@ -13,10 +13,7 @@ import ContactSection from '@/components/sections/ContactSection.vue'
 <template>
   <div class="bg-canvas min-h-screen">
     <!-- Skip to content -->
-    <a
-      href="#main-content"
-      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-[100] px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium"
-    >
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-[100] px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium">
       Skip to content
     </a>
 

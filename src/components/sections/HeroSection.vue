@@ -72,7 +72,7 @@ const { displayText } = useTyping(phrases, {
           <div class="relative">
             <!-- Photo frame -->
             <div class="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden border border-line shadow-sm">
-              <img src="/AhmadAlghoul-Photo.jpg" alt="Ahmad Al Ghoul — Senior Software Engineer" class="w-full h-full object-cover object-top" width="384" height="384" loading="eager" />
+              <img src="/ahmad-alghoul-photo.jpg" alt="Ahmad Al Ghoul — Senior Software Engineer" class="w-full h-full object-cover object-top" width="384" height="384" loading="eager" />
             </div>
             <!-- Accent dots -->
             <div class="absolute -bottom-4 -right-4 w-8 h-8 rounded-full bg-accent opacity-20"></div>

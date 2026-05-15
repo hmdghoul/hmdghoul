@@ -12,11 +12,7 @@ defineProps({
       <span class="text-xs font-mono text-faint">{{ project.period }}</span>
     </div>
     <div class="flex flex-wrap gap-1.5">
-      <span
-        v-for="tag in project.tags"
-        :key="tag"
-        class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-accent-subtle text-accent"
-      >
+      <span v-for="tag in project.tags" :key="tag" class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-accent-subtle text-accent">
         {{ tag }}
       </span>
     </div>

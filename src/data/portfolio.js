@@ -9,7 +9,7 @@ export const contact = {
   email: 'dev@ahmadalghoul.com',
   linkedin: 'https://linkedin.com/in/ahmadalghoul',
   website: 'https://ahmadalghoul.com',
-  cv: '/AhmadAlghoul-CV.pdf',
+  cv: '/ahmad-alghoul-software-engineer-cv.pdf',
 }
 
 export const experience = [

@@ -30,11 +30,7 @@ import SectionHeader from '@/components/ui/SectionHeader.vue'
 
       <!-- Stats -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <RevealWrapper
-          v-for="(stat, i) in stats"
-          :key="stat.label"
-          :delay="i * 80"
-        >
+        <RevealWrapper v-for="(stat, i) in stats" :key="stat.label" :delay="i * 80">
           <StatCard :value="stat.value" :label="stat.label" />
         </RevealWrapper>
       </div>

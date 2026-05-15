@@ -19,16 +19,8 @@ function handleToggle(index) {
       <SectionHeader eyebrow="Career" title="Experience" />
 
       <div class="space-y-3">
-        <RevealWrapper
-          v-for="(item, i) in experience"
-          :key="item.company + item.period"
-          :delay="i * 50"
-        >
-          <ExperienceItem
-            :item="item"
-            :isOpen="openIndex === i"
-            @toggle="handleToggle(i)"
-          />
+        <RevealWrapper v-for="(item, i) in experience" :key="item.company + item.period" :delay="i * 50">
+          <ExperienceItem :item="item" :isOpen="openIndex === i" @toggle="handleToggle(i)" />
         </RevealWrapper>
       </div>
 

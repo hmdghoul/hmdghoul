@@ -12,11 +12,7 @@ import SectionHeader from '@/components/ui/SectionHeader.vue'
       <SectionHeader eyebrow="Expertise" title="Skills" />
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <RevealWrapper
-          v-for="(category, i) in skills"
-          :key="category.name"
-          :delay="i * 70"
-        >
+        <RevealWrapper v-for="(category, i) in skills" :key="category.name" :delay="i * 70">
           <SkillCard :category="category" />
         </RevealWrapper>
       </div>

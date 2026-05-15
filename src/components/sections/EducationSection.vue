@@ -40,11 +40,7 @@ import { GraduationCap, Heart } from '@lucide/vue'
             <h3 class="font-semibold text-primary text-lg mb-1">{{ volunteer.org }}</h3>
             <p class="text-xs font-mono text-faint mb-4">{{ volunteer.period }}</p>
             <ul class="space-y-2">
-              <li
-                v-for="(activity, i) in volunteer.activities"
-                :key="i"
-                class="flex items-start gap-2 text-sm text-muted leading-relaxed"
-              >
+              <li v-for="(activity, i) in volunteer.activities" :key="i" class="flex items-start gap-2 text-sm text-muted leading-relaxed">
                 <span class="text-accent font-mono flex-shrink-0 mt-0.5">›</span>
                 {{ activity }}
               </li>
