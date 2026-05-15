@@ -1,5 +1,5 @@
-<script setup>
-import { stats } from '@/data/portfolio.js'
+<script setup lang="ts">
+import { stats } from '@/data/portfolio'
 import StatCard from '@/components/ui/StatCard.vue'
 import RevealWrapper from '@/components/ui/RevealWrapper.vue'
 import SectionHeader from '@/components/ui/SectionHeader.vue'

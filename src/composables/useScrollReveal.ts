@@ -1,19 +1,24 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
-// Shared observers keyed by "threshold|rootMargin" — avoids one IntersectionObserver per component.
-const observerCache = new Map()
-const callbackMap = new WeakMap()
+interface ScrollRevealOptions {
+  threshold?: number
+  rootMargin?: string
+}
 
-function getSharedObserver(threshold, rootMargin) {
+const observerCache = new Map<string, IntersectionObserver>()
+const callbackMap = new WeakMap<Element, () => void>()
+
+function getSharedObserver(threshold: number, rootMargin: string): IntersectionObserver {
   const key = `${threshold}|${rootMargin}`
-  if (!observerCache.has(key)) {
-    const obs = new IntersectionObserver(
+  let obs = observerCache.get(key)
+  if (!obs) {
+    obs = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
             const cb = callbackMap.get(entry.target)
             if (cb) cb()
-            obs.unobserve(entry.target)
+            obs!.unobserve(entry.target)
             callbackMap.delete(entry.target)
           }
         }
@@ -22,14 +27,14 @@ function getSharedObserver(threshold, rootMargin) {
     )
     observerCache.set(key, obs)
   }
-  return observerCache.get(key)
+  return obs
 }
 
-export function useScrollReveal(options = {}) {
+export function useScrollReveal(options: ScrollRevealOptions = {}) {
   const { threshold = 0.12, rootMargin = '0px 0px -40px 0px' } = options
-  const el = ref(null)
+  const el = ref<HTMLElement | null>(null)
   const isVisible = ref(false)
-  let observer = null
+  let observer: IntersectionObserver | null = null
 
   onMounted(() => {
     if (!el.value) return
@@ -39,7 +44,7 @@ export function useScrollReveal(options = {}) {
   })
 
   onUnmounted(() => {
-    if (el.value && observer) {
+    if (el.value && observer && !isVisible.value) {
       observer.unobserve(el.value)
       callbackMap.delete(el.value)
     }

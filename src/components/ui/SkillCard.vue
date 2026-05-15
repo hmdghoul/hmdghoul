@@ -1,7 +1,9 @@
-<script setup>
-defineProps({
-  category: { type: Object, required: true },
-})
+<script setup lang="ts">
+import type { SkillCategory } from '@/data/portfolio'
+
+defineProps<{
+  category: SkillCategory
+}>()
 </script>
 
 <template>

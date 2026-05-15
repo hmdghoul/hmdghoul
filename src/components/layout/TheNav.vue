@@ -1,14 +1,19 @@
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 import { Sun, Moon, Menu, X, FileDown } from '@lucide/vue'
-import { useTheme } from '@/composables/useTheme.js'
-import { contact } from '@/data/portfolio.js'
+import { useTheme } from '@/composables/useTheme'
+import { contact } from '@/data/portfolio'
+
+interface NavLink {
+  label: string
+  href: string
+}
 
 const { isDark, toggleTheme } = useTheme()
 const isScrolled = ref(false)
 const isMobileOpen = ref(false)
 
-const navLinks = [
+const navLinks: NavLink[] = [
   { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
   { label: 'Skills', href: '#skills' },
@@ -17,11 +22,11 @@ const navLinks = [
   { label: 'Contact', href: '#contact' },
 ]
 
-function onScroll() {
+function onScroll(): void {
   isScrolled.value = window.scrollY > 24
 }
 
-function closeMobile() {
+function closeMobile(): void {
   isMobileOpen.value = false
 }
 

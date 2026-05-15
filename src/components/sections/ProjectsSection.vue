@@ -1,5 +1,5 @@
-<script setup>
-import { projects } from '@/data/portfolio.js'
+<script setup lang="ts">
+import { projects } from '@/data/portfolio'
 import ProjectCard from '@/components/ui/ProjectCard.vue'
 import RevealWrapper from '@/components/ui/RevealWrapper.vue'
 import SectionHeader from '@/components/ui/SectionHeader.vue'

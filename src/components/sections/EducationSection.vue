@@ -1,5 +1,5 @@
-<script setup>
-import { education, volunteer } from '@/data/portfolio.js'
+<script setup lang="ts">
+import { education, volunteer } from '@/data/portfolio'
 import RevealWrapper from '@/components/ui/RevealWrapper.vue'
 import SectionHeader from '@/components/ui/SectionHeader.vue'
 import { GraduationCap, Heart } from '@lucide/vue'

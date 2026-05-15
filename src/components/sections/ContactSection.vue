@@ -1,7 +1,7 @@
-<script setup>
+<script setup lang="ts">
 import { Mail, FileDown, ExternalLink } from '@lucide/vue'
 import RevealWrapper from '@/components/ui/RevealWrapper.vue'
-import { contact } from '@/data/portfolio.js'
+import { contact } from '@/data/portfolio'
 </script>
 
 <template>

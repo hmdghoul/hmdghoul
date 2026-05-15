@@ -1,6 +1,12 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
-export function useTyping(phrases, options = {}) {
+interface TypingOptions {
+  typeSpeed?: number
+  deleteSpeed?: number
+  pauseDuration?: number
+}
+
+export function useTyping(phrases: string[], options: TypingOptions = {}) {
   const {
     typeSpeed = 80,
     deleteSpeed = 40,
@@ -12,9 +18,9 @@ export function useTyping(phrases, options = {}) {
   let phraseIndex = 0
   let charIndex = 0
   let isDeleting = false
-  let timer = null
+  let timer: ReturnType<typeof setTimeout> | null = null
 
-  function tick() {
+  function tick(): void {
     const phrase = phrases[phraseIndex]
 
     if (!isDeleting) {

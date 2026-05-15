@@ -1,8 +1,8 @@
-<script setup>
-import { useTyping } from '@/composables/useTyping.js'
-import { contact } from '@/data/portfolio.js'
+<script setup lang="ts">
+import { useTyping } from '@/composables/useTyping'
+import { contact } from '@/data/portfolio'
 
-const phrases = [
+const phrases: string[] = [
   'Software Engineer Team Lead',
   'Enterprise Systems Architect',
   'Cloud & Backend Specialist',

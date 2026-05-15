@@ -1,5 +1,5 @@
-<script setup>
-import { skills } from '@/data/portfolio.js'
+<script setup lang="ts">
+import { skills } from '@/data/portfolio'
 import SkillCard from '@/components/ui/SkillCard.vue'
 import RevealWrapper from '@/components/ui/RevealWrapper.vue'
 import SectionHeader from '@/components/ui/SectionHeader.vue'

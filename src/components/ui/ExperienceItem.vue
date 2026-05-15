@@ -1,44 +1,44 @@
-<script setup>
+<script setup lang="ts">
 import { ChevronDown, MapPin, Calendar } from '@lucide/vue'
+import type { Experience } from '@/data/portfolio'
 
-defineProps({
-  item: { type: Object, required: true },
-  isOpen: { type: Boolean, default: false },
-})
+defineProps<{
+  item: Experience
+  isOpen: boolean
+}>()
 
-const emit = defineEmits(['toggle'])
+const emit = defineEmits<{
+  toggle: []
+}>()
 
-function onEnter(el) {
-  el.style.height = '0'
-  el.style.opacity = '0'
-  el.style.overflow = 'hidden'
-  el.offsetHeight // force reflow
-  el.style.transition = 'height 300ms ease, opacity 300ms ease'
-  el.style.height = el.scrollHeight + 'px'
-  el.style.opacity = '1'
+function clearInlineStyles(el: Element): void {
+  const htmlEl = el as HTMLElement
+  htmlEl.style.height = ''
+  htmlEl.style.opacity = ''
+  htmlEl.style.overflow = ''
+  htmlEl.style.transition = ''
 }
 
-function onAfterEnter(el) {
-  el.style.height = ''
-  el.style.opacity = ''
-  el.style.overflow = ''
-  el.style.transition = ''
+function onEnter(el: Element): void {
+  const htmlEl = el as HTMLElement
+  const targetHeight = htmlEl.scrollHeight
+  htmlEl.style.height = '0'
+  htmlEl.style.opacity = '0'
+  htmlEl.style.overflow = 'hidden'
+  htmlEl.offsetHeight // force reflow
+  htmlEl.style.transition = 'height 300ms ease, opacity 300ms ease'
+  htmlEl.style.height = targetHeight + 'px'
+  htmlEl.style.opacity = '1'
 }
 
-function onLeave(el) {
-  el.style.height = el.scrollHeight + 'px'
-  el.style.overflow = 'hidden'
-  el.offsetHeight // force reflow
-  el.style.transition = 'height 200ms ease, opacity 200ms ease'
-  el.style.height = '0'
-  el.style.opacity = '0'
-}
-
-function onAfterLeave(el) {
-  el.style.height = ''
-  el.style.opacity = ''
-  el.style.overflow = ''
-  el.style.transition = ''
+function onLeave(el: Element): void {
+  const htmlEl = el as HTMLElement
+  htmlEl.style.height = htmlEl.scrollHeight + 'px'
+  htmlEl.style.overflow = 'hidden'
+  htmlEl.offsetHeight // force reflow
+  htmlEl.style.transition = 'height 200ms ease, opacity 200ms ease'
+  htmlEl.style.height = '0'
+  htmlEl.style.opacity = '0'
 }
 </script>
 
@@ -62,7 +62,7 @@ function onAfterLeave(el) {
       <ChevronDown class="w-5 h-5 flex-shrink-0 mt-1.5 transition-transform duration-200" :class="isOpen ? 'rotate-180 text-accent' : 'text-faint'" />
     </button>
 
-    <Transition :css="false" @enter="onEnter" @after-enter="onAfterEnter" @leave="onLeave" @after-leave="onAfterLeave">
+    <Transition :css="false" @enter="onEnter" @after-enter="clearInlineStyles" @leave="onLeave" @after-leave="clearInlineStyles">
       <div v-if="isOpen" class="px-6 pb-6">
         <div class="border-t border-line pt-4">
           <ul class="space-y-2.5">

@@ -1,18 +1,63 @@
-export const stats = [
+export interface Stat {
+  value: string
+  label: string
+}
+
+export interface ContactInfo {
+  email: string
+  linkedin: string
+  website: string
+  cv: string
+}
+
+export interface Experience {
+  company: string
+  role: string
+  period: string
+  location: string
+  responsibilities: string[]
+}
+
+export interface SkillCategory {
+  name: string
+  items: string[]
+}
+
+export interface Project {
+  name: string
+  period: string
+  company: string
+  tags: string[]
+}
+
+export interface Education {
+  degree: string
+  institution: string
+  location: string
+  year: string
+}
+
+export interface Volunteer {
+  org: string
+  period: string
+  activities: string[]
+}
+
+export const stats: Stat[] = [
   { value: '13+', label: 'Years Experience' },
   { value: '7', label: 'Companies' },
   { value: '8', label: 'Major Projects' },
   { value: '4', label: 'Countries' },
 ]
 
-export const contact = {
+export const contact: ContactInfo = {
   email: 'dev@ahmadalghoul.com',
   linkedin: 'https://linkedin.com/in/ahmadalghoul',
   website: 'https://ahmadalghoul.com',
   cv: '/ahmad-alghoul-software-engineer-cv.pdf',
 }
 
-export const experience = [
+export const experience: Experience[] = [
   {
     company: 'SITA',
     role: 'Software Engineer Team Lead',
@@ -96,7 +141,7 @@ export const experience = [
   },
 ]
 
-export const skills = [
+export const skills: SkillCategory[] = [
   {
     name: 'Programming Languages',
     items: ['C#', 'Java', 'Python', 'C++', 'PHP', 'Go', 'Objective-C'],
@@ -123,7 +168,7 @@ export const skills = [
   },
 ]
 
-export const projects = [
+export const projects: Project[] = [
   {
     name: 'Border Management System — Oman',
     period: '2021 – Present',
@@ -174,14 +219,14 @@ export const projects = [
   },
 ]
 
-export const education = {
+export const education: Education = {
   degree: 'Bachelor of Computer Science',
   institution: 'Al-Zaytoonah Private University',
   location: 'Amman, Jordan',
   year: '2012',
 }
 
-export const volunteer = {
+export const volunteer: Volunteer = {
   org: 'Ambassadors of Charity',
   period: 'January 2012 – Present',
   activities: [

@@ -1,9 +1,12 @@
-<script setup>
-import { useScrollReveal } from '@/composables/useScrollReveal.js'
+<script setup lang="ts">
+import { useScrollReveal } from '@/composables/useScrollReveal'
 
-defineProps({
-  tag: { type: String, default: 'div' },
-  delay: { type: Number, default: 0 },
+withDefaults(defineProps<{
+  tag?: string
+  delay?: number
+}>(), {
+  tag: 'div',
+  delay: 0,
 })
 
 const { el, isVisible } = useScrollReveal()

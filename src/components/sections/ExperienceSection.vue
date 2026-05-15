@@ -1,13 +1,13 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
-import { experience } from '@/data/portfolio.js'
+import { experience } from '@/data/portfolio'
 import ExperienceItem from '@/components/ui/ExperienceItem.vue'
 import RevealWrapper from '@/components/ui/RevealWrapper.vue'
 import SectionHeader from '@/components/ui/SectionHeader.vue'
 
-const openIndex = ref(0)
+const openIndex = ref<number>(0)
 
-function handleToggle(index) {
+function handleToggle(index: number): void {
   openIndex.value = openIndex.value === index ? -1 : index
 }
 </script>

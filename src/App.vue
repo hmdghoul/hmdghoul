@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import TheNav from '@/components/layout/TheNav.vue'
 import TheFooter from '@/components/layout/TheFooter.vue'
 import HeroSection from '@/components/sections/HeroSection.vue'

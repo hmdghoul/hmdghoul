@@ -1,16 +1,10 @@
 import { ref } from 'vue'
 
-function getInitialDark() {
-  const stored = localStorage.getItem('theme')
-  if (stored === 'dark') return true
-  if (stored === 'light') return false
-  return window.matchMedia('(prefers-color-scheme: dark)').matches
-}
-
-const isDark = ref(getInitialDark())
+// index.html inline script already set the class before mount — read it directly.
+const isDark = ref<boolean>(document.documentElement.classList.contains('dark'))
 
 export function useTheme() {
-  function toggleTheme() {
+  function toggleTheme(): void {
     isDark.value = !isDark.value
     if (isDark.value) {
       document.documentElement.classList.add('dark')

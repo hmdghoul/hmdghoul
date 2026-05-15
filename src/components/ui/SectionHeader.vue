@@ -1,6 +1,10 @@
-<script setup>
+<script setup lang="ts">
 import RevealWrapper from '@/components/ui/RevealWrapper.vue'
-defineProps({ eyebrow: String, title: String })
+
+defineProps<{
+  eyebrow?: string
+  title?: string
+}>()
 </script>
 
 <template>
