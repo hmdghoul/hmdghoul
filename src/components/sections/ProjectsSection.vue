@@ -9,7 +9,7 @@ import SectionHeader from '@/components/ui/SectionHeader.vue'
   <section id="projects" class="py-24 md:py-32 bg-canvas border-t border-line">
     <div class="max-w-6xl mx-auto px-6">
 
-      <SectionHeader eyebrow="Work" title="Projects" />
+      <SectionHeader index="05" eyebrow="Work" title="Projects" />
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <RevealWrapper v-for="(project, i) in projects" :key="project.name" :delay="i * 60">

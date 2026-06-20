@@ -9,7 +9,7 @@ import SectionHeader from '@/components/ui/SectionHeader.vue'
   <section id="about" class="py-24 md:py-32 bg-canvas border-t border-line">
     <div class="max-w-6xl mx-auto px-6">
 
-      <SectionHeader eyebrow="About" title="Building Systems That Matter" />
+      <SectionHeader index="02" eyebrow="About" title="Building Systems That Matter" />
 
       <RevealWrapper :delay="100" class="max-w-2xl mb-16">
         <div class="space-y-4 text-muted leading-relaxed text-[15px]">
@@ -29,7 +29,7 @@ import SectionHeader from '@/components/ui/SectionHeader.vue'
       </RevealWrapper>
 
       <!-- Stats -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 pt-10 border-t border-line">
         <RevealWrapper v-for="(stat, i) in stats" :key="stat.label" :delay="i * 80">
           <StatCard :value="stat.value" :label="stat.label" />
         </RevealWrapper>

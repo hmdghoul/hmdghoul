@@ -57,6 +57,8 @@ export const contact: ContactInfo = {
   cv: '/ahmad-alghoul-software-engineer-cv.pdf',
 }
 
+export const availability = 'Available for senior & lead roles'
+
 export const experience: Experience[] = [
   {
     company: 'SITA',
