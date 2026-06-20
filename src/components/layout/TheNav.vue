@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
-import { Sun, Moon, Menu, X, FileDown, MapPin } from '@lucide/vue'
+import { Sun, Moon, Menu, X, FileDown } from '@lucide/vue'
 import { useTheme } from '@/composables/useTheme'
-import { contact, availability } from '@/data/portfolio'
+import { contact } from '@/data/portfolio'
 import Logo from '@/components/ui/Logo.vue'
-import StatusDot from '@/components/ui/StatusDot.vue'
 
 interface NavLink {
   label: string
@@ -37,21 +36,6 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
 
 <template>
   <header class="fixed top-0 inset-x-0 z-50">
-    <!-- Utility bar — collapses on scroll -->
-    <div class="bg-ink text-ink-fg overflow-hidden transition-all duration-300"
-      :class="isScrolled ? 'max-h-0 opacity-0' : 'max-h-9 opacity-100'">
-      <div class="max-w-6xl mx-auto px-6 h-9 flex items-center justify-between text-[11px] font-mono tracking-wide">
-        <span class="inline-flex items-center gap-1.5 text-ink-muted">
-          <MapPin class="w-3 h-3" />
-          Muscat, Oman
-        </span>
-        <span class="inline-flex items-center gap-2">
-          <StatusDot size="sm" />
-          <span class="text-ink-muted">{{ availability }}</span>
-        </span>
-      </div>
-    </div>
-
     <!-- Nav row -->
     <div class="transition-all duration-300"
       :class="isScrolled ? 'bg-canvas/85 backdrop-blur-md border-b border-line shadow-sm' : 'bg-transparent'">

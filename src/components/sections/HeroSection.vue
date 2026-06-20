@@ -22,7 +22,7 @@ const employers: string[] = experience.map((e) => e.company)
 </script>
 
 <template>
-  <section class="relative min-h-screen flex items-center overflow-hidden pt-28 bg-canvas">
+  <section class="relative min-h-screen flex items-center overflow-hidden pt-16 bg-canvas">
     <div class="absolute inset-0 panel-grid pointer-events-none" aria-hidden="true"></div>
 
     <div class="relative max-w-6xl mx-auto px-6 py-20 w-full">
