@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ExternalLink, ShieldCheck } from '@lucide/vue'
 import type { Project } from '@/data/portfolio'
 
 defineProps<{
@@ -19,6 +20,18 @@ defineProps<{
         class="px-2.5 py-0.5 rounded-md text-[11px] font-mono border border-line text-muted group-hover:border-accent/40 transition-colors duration-200">
         {{ tag }}
       </span>
+    </div>
+    <div v-if="project.github || project.privacy" class="flex items-center gap-4 border-t border-line pt-3">
+      <a v-if="project.github" :href="project.github" target="_blank" rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 text-xs font-medium text-muted hover:text-accent transition-colors duration-200">
+        <ExternalLink class="w-3.5 h-3.5" />
+        GitHub
+      </a>
+      <a v-if="project.privacy" :href="project.privacy"
+        class="inline-flex items-center gap-1.5 text-xs font-medium text-muted hover:text-accent transition-colors duration-200">
+        <ShieldCheck class="w-3.5 h-3.5" />
+        Privacy
+      </a>
     </div>
   </div>
 </template>

@@ -140,6 +140,7 @@ Senior Software Engineer with **13+ years** of experience designing and deliveri
 
 | Project | Company | Period | Domain |
 |---------|---------|--------|--------|
+| 🕌 **Athan Times** ([GitHub](https://github.com/hmdghoul/athan-times-app) · [Privacy](https://ahmadalghoul.com/athantimes/privacy/)) | Personal | 2026 | Windows · Prayer Times |
 | 🛂 **Border Management System (Oman)** | SITA | 2021 – Present | Government · Security |
 | 🏢 **ERP System — Al Behar Group** | Maple Telecommunications | 2019 – 2021 | Enterprise · ERP |
 | 🌍 **Border Management System (Niger)** | IOM — United Nations | 2018 – 2019 | Government · UN |

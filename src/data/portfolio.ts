@@ -28,6 +28,8 @@ export interface Project {
   period: string
   company: string
   tags: string[]
+  github?: string
+  privacy?: string
 }
 
 export interface Education {
@@ -171,6 +173,14 @@ export const skills: SkillCategory[] = [
 ]
 
 export const projects: Project[] = [
+  {
+    name: 'Athan Times',
+    period: '2026',
+    company: 'Personal',
+    tags: ['WinUI 3', '.NET', 'Windows'],
+    github: 'https://github.com/hmdghoul/athan-times-app',
+    privacy: '/athantimes/privacy/',
+  },
   {
     name: 'Border Management System — Oman',
     period: '2021 – Present',

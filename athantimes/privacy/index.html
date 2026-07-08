@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Dark mode flash prevention — runs before any paint -->
+  <script>
+    (function () {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
+
+  <!-- SEO -->
+  <title>Privacy Policy — Athan Times</title>
+  <meta name="description" content="Privacy policy for Athan Times: the app collects nothing, has no backend, and never sends your location off your device." />
+  <meta name="author" content="Ahmad Al Ghoul" />
+  <link rel="canonical" href="https://ahmadalghoul.com/athantimes/privacy/" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/athantimes/athan-icon.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body class="bg-canvas text-primary font-sans antialiased selection:bg-accent selection:text-white">
+  <div id="privacy-app"></div>
+  <script type="module" src="/src/pages/privacy/main.ts"></script>
+</body>
+
+</html>
